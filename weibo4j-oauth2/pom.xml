@@ -13,8 +13,30 @@
 	<artifactId>weibo4j-oauth2</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>weibo4j-oauth2</name>
-	
+
+	<properties>
+		<httpclient-version>3.1</httpclient-version>
+		<commons-logging-version>1.1</commons-logging-version>
+		<jackson-version>1.8.5</jackson-version>
+		<log4j-version>1.2.17</log4j-version>
+	</properties>
+
 	<dependencies>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>${httpclient-version}</version>
+		</dependency>
+		<dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commons-logging-version}</version> 
+        </dependency>
+		<dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j-version}</version>
+        </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
