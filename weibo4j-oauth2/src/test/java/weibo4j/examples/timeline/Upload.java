@@ -7,6 +7,7 @@ import java.io.IOException;
 import weibo4j.Timeline;
 import weibo4j.http.ImageItem;
 import weibo4j.model.Status;
+import weibo4j.util.WeiboConfig;
 
 public class Upload {
 	public static void main(String args[]) {
@@ -16,9 +17,9 @@ public class Upload {
 				System.out.println("content length:" + content.length);
 				ImageItem pic = new ImageItem("pic", content);
 				String s = java.net.URLEncoder.encode(args[1], "utf-8");
-				Timeline tl = new Timeline();
-				tl.client.setToken(args[0]);// access_token
-				Status status = tl.UploadStatus(s, pic);
+				String access_token = args[0];
+				Timeline tm = new Timeline(access_token);
+				Status status = tm.uploadStatus(s, pic);
 
 				System.out.println("Successfully upload the status to ["
 						+ status.getText() + "].");

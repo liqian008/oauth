@@ -12,11 +12,9 @@ public class GetTrends {
 	public static void main(String[] args) {
 		String access_token = args[0];
 		String uid = args[1];
-		Trend tm = new Trend();
-		tm.client.setToken(access_token);
-		List<UserTrend> trends = null;
+		Trend tm = new Trend(access_token);
 		try {
-			trends = tm.getTrends(uid);
+			List<UserTrend> trends = tm.getTrends(uid);
 			for(UserTrend t : trends){
 				Log.logInfo(t.toString());
 			}

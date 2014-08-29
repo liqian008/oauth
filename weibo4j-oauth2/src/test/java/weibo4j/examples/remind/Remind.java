@@ -8,8 +8,7 @@ public class Remind {
 
 	public static void main(String[] args) {
 		String access_token = args[0];
-		Reminds rm = new Reminds();
-		rm.client.setToken(access_token);
+		Reminds rm = new Reminds(access_token);
 		try {
 			JSONObject jo = rm.getUnreadCountOfRemind();
 			System.out.println(jo.toString());

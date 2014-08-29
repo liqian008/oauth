@@ -11,8 +11,7 @@ public class GetFavoritesTags {
 
 	public static void main(String[] args) {
 		String access_token = args[0];
-		Favorite fm = new Favorite();
-		fm.client.setToken(access_token);
+		Favorite fm = new Favorite(access_token);
 		try {
 			List<FavoritesTag> favors = fm.getFavoritesTags();
 			for(FavoritesTag s : favors){

@@ -9,10 +9,9 @@ import weibo4j.model.WeiboException;
 public class GetFriendsInCommon {
 
 	public static void main(String[] args) {
-		String access_token =args[0];
+		String access_token = args[0];
 		String uid = args[1];
-		Friendships fm = new Friendships();
-		fm.client.setToken(access_token);
+		Friendships fm = new Friendships(access_token);
 		try {
 			UserWapper users = fm.getFriendsInCommon(uid);
 			for(User u : users.getUsers()){

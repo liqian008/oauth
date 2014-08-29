@@ -9,8 +9,7 @@ public class UpdateFavoritesTagsBatch {
 
 	public static void main(String[] args) {
 		String access_token = args[0];
-		Favorite fm = new Favorite();
-		fm.client.setToken(access_token);
+		Favorite fm = new Favorite(access_token);
 		String tid = args[1];
 		String tag= args[2];
 		try {

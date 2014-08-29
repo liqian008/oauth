@@ -6,14 +6,10 @@ import weibo4j.org.json.JSONArray;
 
 public class CityList {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		String access_token =args[0];
+		String access_token = args[0];
 		String province = args[1];
-		PublicService ps = new PublicService();
-		ps.client.setToken(access_token);
+		PublicService ps = new PublicService(access_token);
 		JSONArray jo;
 		try {
 			jo = ps.cityList(province);

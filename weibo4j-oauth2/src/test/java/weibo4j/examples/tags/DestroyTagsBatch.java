@@ -11,12 +11,10 @@ public class DestroyTagsBatch {
 
 	public static void main(String[] args) {
 		String access_token = args[0];
-		Tags tm = new Tags();
-		tm.client.setToken(access_token);
 		String ids = args[1];
-		List<Tag> tags = null;
+		Tags tm = new Tags(access_token);
 		try {
-			tags = tm.destroyTagsBatch(ids);
+			List<Tag> tags = tm.destroyTagsBatch(ids);
 			for(Tag t : tags){
 				Log.logInfo(t.toString());
 			}

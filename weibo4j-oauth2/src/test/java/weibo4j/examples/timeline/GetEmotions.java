@@ -11,8 +11,7 @@ public class GetEmotions {
 
 	public static void main(String[] args) {
 		String access_token = args[0];
-		Timeline tm = new Timeline();
-		tm.client.setToken(access_token);
+		Timeline tm = new Timeline(access_token);
 		try {
 			List<Emotion> emotions =  tm.getEmotions();
 			for(Emotion e : emotions){

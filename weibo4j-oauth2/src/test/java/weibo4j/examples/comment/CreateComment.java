@@ -9,10 +9,9 @@ public class CreateComment {
 
 	public static void main(String[] args) {
 		String access_token = args[0];
-		String comments =args[1];
+		String comments = args[1];
 		String id = args[2];
-		Comments cm = new Comments();
-		cm.client.setToken(access_token);
+		Comments cm = new Comments(access_token);
 		try {
 			Comment comment = cm.createComment(comments, id);
 			Log.logInfo(comment.toString());
@@ -20,5 +19,4 @@ public class CreateComment {
 			e.printStackTrace();
 		}
 	}
-
 }

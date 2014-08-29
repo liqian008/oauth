@@ -10,19 +10,16 @@ import weibo4j.model.WeiboException;
 public class GetTrendsWeekly {
 
 	public static void main(String[] args) {
-		String access_token =args[0];
-		Trend tm = new Trend();
-		tm.client.setToken(access_token);
-		List<Trends> trends = null;
+		String access_token = args[0];
+		Trend tm = new Trend(access_token);
 		try {
-			trends = tm.getTrendsWeekly();
+			List<Trends> trends = tm.getTrendsWeekly();
 			for(Trends ts : trends){
 				Log.logInfo(ts.toString());
 			}
 		} catch (WeiboException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

@@ -9,11 +9,10 @@ public class ReplyComment {
 
 	public static void main(String[] args) {
 		String access_token = args[0];
-		String comments =args[1];
+		String cid = args[1];
 		String id = args[2];
-		String cid =args[3];
-		Comments cm = new Comments();
-		cm.client.setToken(access_token);
+		String comments = args[3];
+		Comments cm = new Comments(access_token);
 		try {
 			Comment com = cm.replyComment(cid, id, comments);
 			Log.logInfo(com.toString());

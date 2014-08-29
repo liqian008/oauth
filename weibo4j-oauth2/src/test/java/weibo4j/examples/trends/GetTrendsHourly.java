@@ -11,11 +11,9 @@ public class GetTrendsHourly {
 
 	public static void main(String[] args) {
 		String access_token = args[0];
-		Trend tm = new Trend();
-		tm.client.setToken(access_token);
-		List<Trends> trends = null;
+		Trend tm = new Trend(access_token);
 		try {
-			trends = tm.getTrendsHourly();
+			List<Trends> trends = tm.getTrendsHourly();
 			for(Trends ts : trends){
 				Log.logInfo(ts.toString());
 			}

@@ -9,12 +9,11 @@ public class QueryId {
 
 	public static void main(String[] args) {
 		String access_token = args[0];
-		String mid =  args[1];
-		Timeline tm = new Timeline();
-		tm.client.setToken(access_token);
+		String mid = args[1];
+		Timeline tm = new Timeline(access_token);
 		try {
-			JSONObject id = tm.QueryId( mid, 1,1);
-				Log.logInfo(String.valueOf(id));			
+			JSONObject id = tm.queryId( mid, 1,1);
+			Log.logInfo(id.toString());
 		} catch (WeiboException e) {
 			e.printStackTrace();
 		}
