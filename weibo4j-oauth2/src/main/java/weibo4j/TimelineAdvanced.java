@@ -1,5 +1,7 @@
 package weibo4j;
 
+import java.net.URLEncoder;
+
 import weibo4j.model.PostParameter;
 import weibo4j.model.Status;
 import weibo4j.model.WeiboException;
@@ -33,9 +35,10 @@ public class TimelineAdvanced extends Weibo {
 	 * @since JDK 1.5
 	 */
 	public Status updateUrlText(String status, String imageUrl) throws WeiboException {
+//		System.out.println("content: "+status + ", weibo status length: "+status.length());
 		return new Status(client.post(WeiboConfig.getValue("baseURL")
 				+ "statuses/upload_url_text.json",
-				new PostParameter[] { new PostParameter("status", status),  new PostParameter("pic", imageUrl) },
+				new PostParameter[] { new PostParameter("status", status),  new PostParameter("url", imageUrl) },
 				access_token));
 	}
 
